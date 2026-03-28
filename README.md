@@ -33,7 +33,8 @@ this package operationalizes the book's emphasis on:
 
 - diagrams as first-class architectural objects
 - left and right Kan structure as aggregation and completion primitives
-- GT, KET, DB, BASKET, ROCKET, and Democritus as a shared categorical family
+- GT, KET, DB, Democritus, and the broader BASKET / ROCKET agenda as a shared
+  categorical family
 - structured language-model duality between prediction and completion
 - local-to-global document reasoning in the Democritus pipeline
 
@@ -66,8 +67,9 @@ This repository is best read together with the following references:
 - `compile_to_callable`: a backend-neutral executor using plain Python data
 - `compile_to_torch`: an optional `torch.nn.Module` lowering when Torch is
   installed
-- a macro library of named blocks for KET, DB, GT, BASKET, ROCKET, and
-  Democritus
+- executable v0 paths for KET, DB, GT, and Democritus
+- categorical planning vocabulary that points toward later BASKET / ROCKET
+  support, without claiming a full v0 implementation of those systems
 - a generic right-Kan `completion_block()` and a paired `structured_lm_duality()`
   macro for attention/completion diagrams
 - typed config dataclasses for macro parameters
@@ -90,7 +92,8 @@ The slide deck already identifies the irreducible FunctorFlow core:
 - KET: left Kan aggregation
 - DB: obstruction / commutativity control
 - GT: structured message passing over incidence geometry
-- BASKET / ROCKET: plan diagrams plus repair in diagram space
+- BASKET / ROCKET: plan diagrams plus repair in diagram space, targeted for a
+  later v1 release rather than fully implemented in v0
 - Democritus: gluing local slices into a coherent whole
 
 So the right first implementation is a *small categorical IR* rather than a
@@ -99,7 +102,10 @@ backends.
 
 ## Macro Library
 
-FunctorFlow now includes named block builders:
+FunctorFlow now includes named block builders. The executable v0 focus is on
+KET, DB, GT, and Democritus; planning-oriented BASKET / ROCKET builders are
+currently best understood as forward-looking language scaffolding rather than a
+full implementation:
 
 - `ket_block()`
 - `completion_block()`
@@ -127,6 +133,11 @@ FunctorFlow also now ships curated tutorial libraries such as:
 - `foundations`
 - `planning`
 - `unified`
+
+For clarity, the `planning` and `unified` libraries can expose BASKET / ROCKET
+surface vocabulary, but the current v0 release does not yet claim a full
+executable BASKET / ROCKET system. That is planned for a later v1 release
+before ICML.
 
 ## Typed Macro Configs
 
@@ -249,7 +260,8 @@ FunctorFlow now includes a first torch-backed KET language-model integration in
 
 This is the current best starting point for the first real demonstration model,
 because it exercises the actual FunctorFlow execution path on a canonical KET
-task without requiring the heavier BASKET or Democritus data pipelines first.
+task without requiring the heavier Democritus pipeline or future planning-
+system integrations first.
 
 FunctorFlow now also includes a unified structured-language-model experiment
 path in `FunctorFlow/structured_lm.py`. It uses the same FunctorFlow language
@@ -424,7 +436,7 @@ That prints:
   Torch wrapper
 - `FunctorFlow/DESIGN.md` captures the language intent and roadmap
 - `FunctorFlow/macros.py` defines the named block library, typed configs, and
-  composite macros
+  composite macros, including forward-looking planning vocabulary
 - `FunctorFlow/adapter_library.py` defines packaged adapter libraries and the
   standard adapter pack
 - `FunctorFlow/tutorial_library.py` defines packaged tutorial libraries over
@@ -481,5 +493,5 @@ This is a design-oriented v0, not a finished theorem:
   belong to the next pass
 
 That is still valuable: it gives the tutorial a real language surface and gives
-the repo one place where KET, DB, GT, BASKET, ROCKET, and Democritus can start
-to live together.
+the repo one place where KET, DB, GT, and Democritus already live together,
+while leaving room for fuller BASKET / ROCKET support in a later v1 release.

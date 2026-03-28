@@ -3,8 +3,8 @@
 ## Short GitHub Summary
 
 FunctorFlow is a lightweight categorical DSL and executable IR for building
-diagrammatic AI systems grounded in *Categories for AGI*, with support for KET,
-GT, DB, BASKET, ROCKET, and Democritus-style workflows.
+diagrammatic AI systems grounded in *Categories for AGI*, with executable v0
+paths for KET, GT, DB, and Democritus.
 
 ## Suggested Repository Description
 
@@ -24,7 +24,8 @@ Kan extensions, and obstruction losses.
 This release includes:
 
 - the core FunctorFlow DSL and compiler
-- named macro blocks for KET, GT, DB, BASKET, ROCKET, and Democritus
+- executable v0 systems for KET, GT, DB, and Democritus
+- forward-looking categorical vocabulary for later BASKET / ROCKET support
 - torch-backed structured language-model demos
 - generated notebooks and tutorial artifacts
 - a proof-of-concept Lean certificate interface under `proofs/`
@@ -42,5 +43,7 @@ Notes for this public snapshot:
 - some data directories are intentionally left as placeholders or metadata-only
   to keep the repository publishable and to avoid unclear redistribution status
 - `data/democritus/` is intended as a user-supplied PDF input directory
+- BASKET and ROCKET are part of the longer-term FunctorFlow roadmap, but are
+  not yet fully implemented in this v0 public release
 - FunctorFlow v0 is a research release: small, runnable, and tutorial-oriented,
   rather than a finished production framework

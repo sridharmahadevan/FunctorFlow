@@ -6,8 +6,7 @@ FunctorFlow is a categorical deep learning implementation unifying attention and
 
 ## Suggested Repository Description
 
-FunctorFlow: a categorical DSL and executable IR for diagrammatic AI systems,
-grounded in *Categories for AGI* and large causal models from LLMs.
+FunctorFlow: a categorical language for building diagrammatic AI systems, designed as a software companion to the textbook *Categories for AGI*. 
 
 ## Suggested Release Title
 

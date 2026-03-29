@@ -39,6 +39,8 @@ v0 already provides useful material to build on:
 - a surface DSL with typed objects, morphisms, diagrams, Kan operators, and
   obstruction losses
 - an initial normalized IR and backend lowering path
+- explicit left-Kan and right-Kan primitives that already suggest a causal
+  reading in terms of intervention and conditioning
 - runnable KET, DB, GT, and Democritus-oriented examples
 - ports, adapters, and composition scaffolding
 - notebook generation, tutorial packaging, and documentation structure
@@ -121,6 +123,33 @@ This may not be fully realized in v1. But v1 should be designed so that it
 does not block this direction and, ideally, begins the explicit construction of
 the internal language needed for later topos-theoretic FunctorFlow releases.
 
+### 6. Integrate RN-Kan-Do-Calculus explicitly
+
+FunctorFlow v1 should make the causal interpretation of its Kan primitives more
+explicit.
+
+The guiding idea is:
+
+- conditioning should be representable through right-Kan structure
+- interventions should be representable through left-Kan structure
+- RN-Kan-style semantics should help relate probabilistic change of measure,
+  conditioning, and intervention inside a common categorical language
+
+This is attractive because FunctorFlow already has left-Kan and right-Kan
+building blocks in v0. So v1 does not need to invent those primitives from
+scratch; it needs to reinterpret and extend them more explicitly for causal
+reasoning.
+
+The longer-term aim is for FunctorFlow to host a native causal language in
+which:
+
+- observational conditioning
+- interventional semantics
+- transport between observational and interventional regimes
+- compatibility with do-calculus or RN-Kan-do-calculus style reasoning
+
+can be expressed as part of the categorical system design itself.
+
 ## Canonical v1 Example
 
 The canonical v1 demonstration should look something like this:
@@ -192,7 +221,22 @@ Upgrade the proof layer from certificate output to categorical construction
 checking. The immediate aim is structural verification, not numerical theorem
 proving about optimization.
 
-### Workstream F. Topos-theoretic foundations
+### Workstream F. RN-Kan-Do-Calculus integration
+
+Make the causal meaning of left-Kan and right-Kan explicit in FunctorFlow.
+
+This should include:
+
+- defining a v1 semantic account in which right-Kan captures conditioning-style
+  structure
+- defining a corresponding account in which left-Kan captures
+  intervention-style structure
+- identifying how RN-Kan ideas connect measure change, causal transport, and
+  interventional reasoning
+- determining what causal constructions should become first-class runtime and
+  proof objects
+
+### Workstream G. Topos-theoretic foundations
 
 Begin the design work needed for internal topos reasoning in FunctorFlow.
 
@@ -241,7 +285,15 @@ This should include:
   logical constraints
 - determine what can responsibly ship in v1 versus what should wait for v2
 
-### Phase 6. Revisit planning systems
+### Phase 6. Prototype RN-Kan causal semantics
+
+- make conditioning-as-right-Kan and intervention-as-left-Kan explicit in the
+  v1 design
+- build at least one small causal example using those semantics directly
+- determine how much RN-Kan-do-calculus machinery can responsibly ship in v1
+  versus later releases
+
+### Phase 7. Revisit planning systems
 
 - return to BASKET / ROCKET once the compositional categorical core is mature
 - represent planning and repair through the same universal-construction
@@ -273,6 +325,9 @@ FunctorFlow v1 will be on the right track if it can do all of the following:
 - leave FunctorFlow structurally prepared for explicit internal topos language
   support, even if the full topos-theoretic layer is only partially realized in
   v1
+- make RN-Kan-style conditioning/intervention semantics explicit enough that
+  causal reasoning is part of the language design rather than only an external
+  interpretation
 
 ## Working Principle
 

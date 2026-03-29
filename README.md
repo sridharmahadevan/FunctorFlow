@@ -1,7 +1,6 @@
 # FunctorFlow v0
 
-FunctorFlow is the first executable software pass on the categorical systems
-developed in [*Categories for AGI*](https://people.cs.umass.edu/~mahadeva/papers/catagi.pdf).
+FunctorFlow is a categorical framework for building composable deep learning systems using diagrams. It is intended as a software companion to the textbook   [*Categories for AGI*](https://people.cs.umass.edu/~mahadeva/papers/catagi.pdf).
 The guiding pattern is:
 
 `Diagram / Spec -> Categorical IR -> Neural Architecture`

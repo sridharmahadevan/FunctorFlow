@@ -26,6 +26,37 @@ These documents are meant to capture the language surface more carefully than
 either the slide deck or the class definitions alone, and should be updated
 whenever the public API changes materially.
 
+## Installation
+
+FunctorFlow can now be installed directly with `pip`:
+
+```bash
+python -m pip install .
+```
+
+If you want the Torch-backed demos as well:
+
+```bash
+python -m pip install ".[torch]"
+```
+
+For development from a checkout, `pip install -e .` may require a recent
+`pip` / `setuptools`. The safest cross-machine path is still:
+
+```bash
+python -m pip install .
+```
+
+After installation, the recommended way to run examples is through the package:
+
+```bash
+python -m FunctorFlow.examples.tutorial_v0
+python -m FunctorFlow.examples.predict_detach_regime_demo
+```
+
+Running examples directly from a source checkout with `python -m examples...`
+is also supported for convenience.
+
 ## Relation to Categories for AGI
 
 FunctorFlow is the software companion to *Categories for AGI*. In particular,
@@ -431,6 +462,10 @@ That prints:
 
 ## Files
 
+- `pyproject.toml` defines the pip-installable project metadata for modern
+  Python packaging
+- `setup.py` provides a compatibility packaging path for older Python /
+  setuptools environments
 - `FunctorFlow/core.py` defines the DSL, IR, and subdiagram inclusion
 - `FunctorFlow/compiler.py` defines the backend-neutral executor and optional
   Torch wrapper

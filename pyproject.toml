@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FunctorFlow"
+version = "0.1.0"
+description = "A lightweight categorical DSL and executable IR for diagrammatic AI systems."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+torch = [
+  "torch>=2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/sridharmahadevan/FunctorFlow"
+Repository = "https://github.com/sridharmahadevan/FunctorFlow"
+
+[tool.setuptools]
+include-package-data = true
+packages = ["FunctorFlow", "FunctorFlow.examples"]
+
+[tool.setuptools.package-dir]
+FunctorFlow = "."
+"FunctorFlow.examples" = "examples"
+
+[tool.setuptools.package-data]
+FunctorFlow = [
+  "docs/*.pdf",
+  "notebooks/*.ipynb",
+  "data/README.md",
+  "data/democritus/.gitkeep",
+  "data/ptb/.gitkeep",
+  "data/wikitext-2/.gitkeep",
+  "data/wikitext-103/LICENSE.txt",
+  "data/wikitext-103/README.txt",
+  "proofs/*.lean",
+  "proofs/*.json",
+  "proofs/lakefile.lean",
+  "proofs/lean-toolchain",
+  "proofs/FunctorFlowProofs/*.lean",
+  "proofs/FunctorFlowProofs/Generated/*.lean",
+]

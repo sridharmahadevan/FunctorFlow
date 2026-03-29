@@ -22,6 +22,9 @@ That means:
 - larger architectures should be assembled through categorical operations such
   as products, coproducts, pullbacks, pushouts, equalizers, coequalizers, and
   subobject-style constructions
+- the design should move toward topos-theoretic reasoning, eventually requiring
+  an explicit internal language for the relevant FunctorFlow topos-like
+  structures
 - the runtime and proof interfaces should preserve those constructions rather
   than flattening them into ad hoc glue code too early
 
@@ -99,6 +102,25 @@ proof-aware composition claims, such as:
 This does not require full verification of training behavior. It does require
 verification of the categorical structure that the runtime claims to realize.
 
+### 5. Work toward an internal topos language
+
+A major longer-range goal for FunctorFlow is to support topos-theoretic
+reasoning in a way that is native to the system rather than imported only as
+external mathematical commentary.
+
+That likely requires explicit representations for ideas such as:
+
+- subobject classifiers
+- generalized predicates and truth objects
+- internal logic over model states and constructions
+- sheaf- and site-like local-to-global semantics
+- morphisms and constructions interpreted through an internal language rather
+  than only through backend execution code
+
+This may not be fully realized in v1. But v1 should be designed so that it
+does not block this direction and, ideally, begins the explicit construction of
+the internal language needed for later topos-theoretic FunctorFlow releases.
+
 ## Canonical v1 Example
 
 The canonical v1 demonstration should look something like this:
@@ -170,6 +192,21 @@ Upgrade the proof layer from certificate output to categorical construction
 checking. The immediate aim is structural verification, not numerical theorem
 proving about optimization.
 
+### Workstream F. Topos-theoretic foundations
+
+Begin the design work needed for internal topos reasoning in FunctorFlow.
+
+This should include:
+
+- identifying which categories in FunctorFlow should admit topos-like
+  structure
+- specifying how subobject classifiers and internal predicates would appear in
+  the language
+- relating Democritus-style gluing and local consistency to sheaf- or
+  site-oriented semantics
+- determining whether a minimal internal language can be exposed already in v1
+  or only prepared for v2
+
 ## Suggested Development Phases
 
 ### Phase 1. Freeze and extract
@@ -196,7 +233,15 @@ proving about optimization.
 - ensure cross-family composition is possible through shared categorical
   structure rather than one-off adapters
 
-### Phase 5. Revisit planning systems
+### Phase 5. Prototype internal-language support
+
+- identify the minimum viable internal language needed for future
+  topos-theoretic reasoning
+- experiment with subobject-style predicates, classifier interfaces, and local
+  logical constraints
+- determine what can responsibly ship in v1 versus what should wait for v2
+
+### Phase 6. Revisit planning systems
 
 - return to BASKET / ROCKET once the compositional categorical core is mature
 - represent planning and repair through the same universal-construction
@@ -211,6 +256,8 @@ The following should not drive the design:
 - treating proof support as a purely cosmetic export layer
 - rebuilding every prior system at once before the KET-centered categorical
   assembly story works
+- forcing a full internal topos language into v1 before the compositional core
+  is stable enough to support it
 
 ## Success Criteria
 
@@ -223,6 +270,9 @@ FunctorFlow v1 will be on the right track if it can do all of the following:
 - emit proof artifacts that reflect those constructions faithfully
 - provide at least one clean end-to-end demonstration that would have been
   awkward or artificial in v0
+- leave FunctorFlow structurally prepared for explicit internal topos language
+  support, even if the full topos-theoretic layer is only partially realized in
+  v1
 
 ## Working Principle
 

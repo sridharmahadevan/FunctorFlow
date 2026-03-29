@@ -5,14 +5,8 @@ The guiding pattern is:
 
 `Diagram / Spec -> Categorical IR -> Neural Architecture`
 
-This version is intentionally small. It gives us a concrete design center for
-the ICML 2026 tutorial and a lightweight executable kernel for experimentation,
-without pretending we already have a full categorical deep learning compiler.
-
-One practical constraint now guides the implementation: code intended for the
-public FunctorFlow release should live inside `FunctorFlow/`, so the directory
-can be cleanly lifted into a standalone GitHub repo ahead of the July 2026
-ICML tutorial.
+This version is intentionally small. A more complete version of FunctorFlow will
+be presented as an ICML 2026 tutorial. 
 
 ## User's manual
 

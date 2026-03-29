@@ -2,9 +2,7 @@
 
 ## Short GitHub Summary
 
-FunctorFlow is a lightweight categorical DSL and executable IR for building
-diagrammatic AI systems grounded in *Categories for AGI*, with executable v0
-paths for KET, GT, DB, and Democritus.
+FunctorFlow is a categorical deep learning implementation unifying attention and diffusion using Kan Extension Transformers. 
 
 ## Suggested Repository Description
 
